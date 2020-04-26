@@ -17,6 +17,30 @@ for iter = 1:num_iters
     %       of the cost function (computeCost) and gradient here.
     %
 
+    % sumTemp1
+    sumTemp1 = 0;
+    for i = 1:m
+        sumTemp1 = sumTemp1 + (((theta(1) + theta(2) * X(i,2)) - y(i)) * X(i,1));
+    end
+
+    % sumTemp2
+    sumTemp2 = 0;
+    for i = 1:m
+        sumTemp2 = sumTemp2 + (((theta(1) + theta(2) * X(i,2)) - y(i)) * X(i,2));
+    end
+
+    % calc temp1 using sumTemp1
+    temp1 = theta(1) - ((alpha * (1/m)) * sumTemp1);
+
+    % calc temp2 using sumTemp2
+    temp2 = theta(2) - ((alpha * (1/m)) * sumTemp2);
+
+    % set theta(1) = temp1
+    theta(1) = temp1;
+
+    % set theta(2) = temp2
+    theta(2) = temp2;
+
 
 
 

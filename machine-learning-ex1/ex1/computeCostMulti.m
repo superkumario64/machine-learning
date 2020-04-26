@@ -6,14 +6,26 @@ function J = computeCostMulti(X, y, theta)
 % Initialize some useful values
 m = length(y); % number of training examples
 
-% You need to return the following variables correctly 
-J = 0;
+%fprintf('\nprint X(1:10, :)\n');
+%X(1:10, :)
+%fprintf('\nprint y(1:10)\n');
+%y(1:10)
+%fprintf('\nprint theta\n');
+%theta
+%fprintf('\nprint X*theta-y\n');
+
+
+XThetaMinusY = (X*theta)-y;
+trasposedProduct = XThetaMinusY' * XThetaMinusY;
+J = (1/(2*m)) * trasposedProduct;
 
 % ====================== YOUR CODE HERE ======================
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
 
+
+% You need to return the following variables correctly 
 
 
 
