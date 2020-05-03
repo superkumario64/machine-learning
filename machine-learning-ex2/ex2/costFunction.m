@@ -20,6 +20,27 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
+% fprintf('print theta :');
+% theta
+% fprintf('print X(1:4,:) :');
+% X(1:4,:)
+% fprintf('print y(1:4,:) :');
+% y(1:4,:)
+% pause;
+
+
+% calculate J theta
+h = sigmoid(X * theta);
+J = ((1/m) * ((-y' * log(h)) - ((1 - y)' * log(1 - h))));
+grad = (1/m) * (((h - y)' * X)');
+
+% for j = 1:size(theta, 1)
+%     sum = 0;
+%     for i = 1:size(X, 1)
+%         sum = sum + ((sigmoid(theta(j) * X(i)) - y(i)) * X(i,j));
+%     end
+%     grad(j) = (1/m) * sum;
+% end
 
 
 
